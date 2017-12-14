@@ -1,0 +1,142 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.header_nav {
+		display: none;
+		width: 110%;
+		border-top: 1px solid rgba(255,255,255,0.1);
+		padding: 30px 15px;
+		margin-right: -15px;
+		margin-left: -15px;
+		overflow: hidden;
+	}
+	.container_flex .navbar {
+		width: 100%;
+		min-height: 98px;
+	}
+	ul.header_nav_ul {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	ul.header_nav_ul > li {
+		width: 100%;
+	}
+	ul.header_nav_ul > li > a {
+		padding: 10px 0;
+		text-align: center;
+		font-size: 14px;
+	}
+	ul.header_nav_ul > li ul.drop_menu {
+		position: static;
+		text-align: center;
+		background: rgba(255,255,255,0.1);
+	}
+	ul.header_nav_ul > li ul.drop_menu a {
+		padding: 5px 10px;
+		font-size: 14px;
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.flex-row > .md-6 {
+		width: 100%;
+	}
+	.header_section .caption_block {
+		padding: 80px 0;
+	}
+	.header_section .caption_block > div {
+		margin-bottom: 20px;
+		text-align: center !important;
+	}
+	.header_section .caption_block .first {
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.header_section .caption_block .second {
+		font-size: 33px;
+		line-height: 33px;
+	}
+	.header_section .caption_block .third {
+		font-size: 62px;
+		line-height: 62px;
+	}
+	.header_section img {
+		max-width: 345px;
+		margin-bottom: 20px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+	.varieties_section .sort {
+		display: block;
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	/* Удалить */
+	ul.header_nav_ul > li:hover ul.drop_menu {
+		display: block;
+	} 
+	/*====*/
+}
