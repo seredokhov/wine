@@ -42,32 +42,6 @@ h2 {
 	font-family: "Playfair Display";
 	margin: 0;
 }
-html.js .loader {
-	background: none repeat scroll 0 0 #ffffff;
-	bottom: 0;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 100%;
-	z-index: 9999;
-}
-html.js .loader_inner {
-	background-image: url("../img/preloader.gif");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: #fff;
-	height: 60px;
-	width: 60px;
-	margin-top: -30px;
-	margin-left: -30px;
-	left: 50%;
-	top: 50%;
-	position: absolute;
-}
-
 body {
 	font-family: sans-serif;
 	font-size: 16px;
@@ -784,3 +758,56 @@ footer .copy {
 	width: 66.6666%
 }
 /*----*/
+
+
+.preload {
+	background: #fff;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+}
+.preload .inner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100px;
+	height: 100px;
+	transform: translate(-50%, -50%);
+}
+.preload .rotate {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	z-index: 10;
+	border: 2px solid #ccc;
+	border-top-color: transparent;
+	border-radius: 50%;
+	position: absolute;
+	animation-name: spin;
+	animation-duration: 600ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+}
+.preload .progress {
+	line-height: 100px;
+	text-align: center;
+	position: relative;
+	z-index: 11;
+	font-family: "Playfair Display";
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+ 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

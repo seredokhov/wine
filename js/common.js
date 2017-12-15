@@ -1,11 +1,35 @@
+/* Анимации */
+$(function(){
+	/*$(".who").animated("zoomIn");
+	$(".designer").animated("bounceInDown");
+	$(".programmer").animated("bounceInRight");
+	$(".account_manager").animated("bounceInUp");
+	$(".header_end p").animated("slideInLeft");
+	$(".ul_container").animated("fadeInRight");*/
+	
+		setTimeout(function () {
+		    $(".first").animated("fadeInLeft");
+		}, 500)
+		setTimeout(function () {
+		    $(".second").animated("fadeInLeft");
+		}, 300)
+		setTimeout(function () {
+		    $(".third").animated("fadeInLeft");
+		}, 500)
+		setTimeout(function () {
+		    $(".animate_img").animated("fadeInRight");
+		}, 500)
+
+	
+	//$(".gallery_block").animated("fadeInRight");
+
+});
+
+
+
+
 $(function() {
 
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
 
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
@@ -39,10 +63,35 @@ $(function() {
 	
 });
 
-$(window).load(function() {
+// Прелоадер
 
-	$(".loader_inner").fadeOut();
-	$(".loader").delay(400).fadeOut("slow");
+$(window).load(function() {
+	var images = document.images;
+	var images_total_count = images.length;
+	var images_loaded_count = 0;
+	var progress = document.getElementById('progress');
+
+	for (var i = 0; i < images_total_count; i++) {
+		image_clone = new Image();
+		image_clone.onload = loaded;
+		image_clone.onerror = loaded;
+		image_clone.src = images[i].src;
+
+	}
+	function loaded() {
+		images_loaded_count++;
+		
+		progress.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%';
+		console.log(progress.innerHTML);
+
+		if ( images_loaded_count >= images_total_count) {
+			setTimeout(function () {
+				$(".preload .inner").fadeOut();
+				$(".preload").fadeOut("slow");
+			}, 500)
+		}
+
+	} 
 
 });
 
@@ -73,3 +122,6 @@ $(function(){
 	}
 	$(window).on('load',linkBlock);
 })
+
+
+

@@ -30,8 +30,6 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
 
-	<script src="libs/modernizr/modernizr.js"></script>
-
 </head>
 
 <body>
@@ -109,7 +107,7 @@
 					</div>
 				</div>
 				<div class="md-6">
-					<img src="img/header-bottle.png" alt="botle">
+					<img src="img/header-bottle.png" class="animate_img" alt="botle">
 				</div>
 			</div>
 		</section>
@@ -388,8 +386,11 @@
 	
 	<div class="hidden"></div>
 
-	<div class="loader">
-		<div class="loader_inner"></div>
+	<div class="preload">
+		<div class="inner">
+			<div class="rotate"></div>
+			<div class="progress" id="progress">0%</div>
+		</div>
 	</div>
 
 	<!--[if lt IE 9]>
