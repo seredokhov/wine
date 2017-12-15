@@ -59,7 +59,7 @@ body {
 header {
 	background: #121212;
 	top: -136px;
-	transition: all 1s linear;
+	transition: all .5s linear;
 }
 header.fix {
 	position: fixed;
@@ -67,9 +67,6 @@ header.fix {
 	top: 0px;
 	left: 0;
 	right: 0;
-}
-header.fix.over {
-	top: -136px;
 }
 .container_flex {
 	display: flex;
@@ -181,7 +178,9 @@ a.search_button:hover {
 
 /* Первая секция */
 .header_section {
-	/*min-height: 660px;*/
+	background: #121212;
+}
+.header_section > div {
 	background: url(../img/bg1.jpg) no-repeat;
 	background-size: cover;
 	background-position: center center;

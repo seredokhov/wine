@@ -81,7 +81,6 @@ for (var i = 0; i < images_total_count; i++) {
 function loaded() {
 	images_loaded_count++;		
 	progress.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%';
-	console.log(progress.innerHTML);
 
 	if ( images_loaded_count >= images_total_count) {
 		setTimeout(function () {
@@ -130,19 +129,19 @@ $(function(){
 	$(function() {
 		var header = $("header");
 		var offset = $(header).offset().top;
-		var main = $('main');
+		var section = $('.header_section');
 
 		$(window).scroll(function (){
 			var windowScroll = $(window).scrollTop();
 			if (windowScroll > header.height()) {
 
-				$(header).addClass("fix");
-				main.css('margin-top', header.height()+ 'px');
+				header.addClass("fix");
+				section.css('padding-top', header.height()+ 'px');
 
 			}
 			if (windowScroll <= 0 ) {
-				$(header).removeClass("fix");
-				$('main').css('margin-top', '0');
+				header.removeClass("fix");
+				section.css('padding-top', '0');
 			}
 		});
 	});
