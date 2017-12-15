@@ -41,7 +41,7 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-	.flex-row > .md-6 {
+	.flex-row > [class^= "md-"] {
 		width: 100%;
 	}
 	.header_section .caption_block {
@@ -66,6 +66,35 @@
 	.header_section img {
 		max-width: 345px;
 		margin-bottom: 20px;
+	}
+	.img_section .descript_bg_block .fix {
+		margin-top: 0;
+	}
+	.img_section .flex-row > div.descript_bg_block,
+	.estate_section .description_block {
+		padding: 60px 10px;
+	}
+	.inst_section .inst_description {
+		min-height: auto;
+		padding: 50px 10px;
+	}
+	footer .footer_bottom {
+		flex-wrap: wrap;
+	}
+	.footer_menu ul,
+	.footer_social,
+	footer .footer_bottom {
+		justify-content: center;
+	}
+	footer .footer_bottom > div {
+		width: 100%;
+		margin-top: 25px;
+	}
+	footer .copy {
+		text-align: center;
+	}
+	footer .footer_bottom {
+		margin-top: 90px;
 	}
 }
 
@@ -96,12 +125,36 @@
 	.varieties_section .sort {
 		display: block;
 	}
-
+	.link_block {
+		justify-content: center;
+	}
+	.link_block a {
+		margin: 0 10px !important;
+	}
+	.varieties_section {
+		padding-top: 50px;
+	}
+	.varieties_section .sort {
+		padding-bottom: 50px;
+	}
+	.estate_section > .container {
+		padding: 50px 0;
+	}
+	.visit_section {
+		padding: 90px 0;
+	}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+	.inst_section ul.inst_photos > li {
+		width: 50%;
+		height: auto;
+	}
+	.link_block a {
+		margin: 0;
+		width: 100%;
+	}
 }
 
 /* Custom, iPhone Retina */
@@ -139,4 +192,8 @@
 		display: block;
 	} 
 	/*====*/
+	.glass_man_section .description_block {
+		padding: 150px;
+		padding-left: 30px;
+	}
 }
