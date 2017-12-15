@@ -58,6 +58,18 @@ body {
 /* Шапка */
 header {
 	background: #121212;
+	top: -136px;
+	transition: all 1s linear;
+}
+header.fix {
+	position: fixed;
+	z-index: 10;
+	top: 0px;
+	left: 0;
+	right: 0;
+}
+header.fix.over {
+	top: -136px;
 }
 .container_flex {
 	display: flex;
@@ -759,7 +771,7 @@ footer .copy {
 }
 /*----*/
 
-
+/* Прелоадер */
 .preload {
 	background: #fff;
 	position: fixed;

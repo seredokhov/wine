@@ -125,4 +125,24 @@ $(function(){
 })
 
 
+// Смещение шапки в момент скрола
 
+	$(function() {
+		var header = $("header");
+		var offset = $(header).offset().top;
+		var main = $('main');
+
+		$(window).scroll(function (){
+			var windowScroll = $(window).scrollTop();
+			if (windowScroll > header.height()) {
+
+				$(header).addClass("fix");
+				main.css('margin-top', header.height()+ 'px');
+
+			}
+			if (windowScroll <= 0 ) {
+				$(header).removeClass("fix");
+				$('main').css('margin-top', '0');
+			}
+		});
+	});
