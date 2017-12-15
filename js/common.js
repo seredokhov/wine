@@ -65,33 +65,33 @@ $(function() {
 
 // Прелоадер
 
-$(function() {
-	var images = document.images;
-	var images_total_count = images.length;
-	var images_loaded_count = 0;
-	var progress = document.getElementById('progress');
 
-	for (var i = 0; i < images_total_count; i++) {
-		image_clone = new Image();
-		image_clone.onload = loaded;
-		image_clone.onerror = loaded;
-		image_clone.src = images[i].src;
+var images = document.images;
+var images_total_count = images.length;
+var images_loaded_count = 0;
+var progress = document.getElementById('progress');
 
+for (var i = 0; i < images_total_count; i++) {
+	image_clone = new Image();
+	image_clone.onload = loaded;
+	image_clone.onerror = loaded;
+	image_clone.src = images[i].src;
+
+}
+function loaded() {
+	images_loaded_count++;		
+	progress.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%';
+	console.log(progress.innerHTML);
+
+	if ( images_loaded_count >= images_total_count) {
+		setTimeout(function () {
+			$(".preload .inner").fadeOut();
+			$(".preload").fadeOut("slow");
+		}, 500)
 	}
-	function loaded() {
-		images_loaded_count++;		
-		progress.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%';
-		console.log(progress.innerHTML);
 
-		if ( images_loaded_count >= images_total_count) {
-			setTimeout(function () {
-				$(".preload .inner").fadeOut();
-				$(".preload").fadeOut("slow");
-			}, 500)
-		}
+} 
 
-	} 
-});
 
 
 
