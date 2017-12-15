@@ -65,7 +65,7 @@ $(function() {
 
 // Прелоадер
 
-$(window).load(function() {
+$(function() {
 	var images = document.images;
 	var images_total_count = images.length;
 	var images_loaded_count = 0;
@@ -79,8 +79,7 @@ $(window).load(function() {
 
 	}
 	function loaded() {
-		images_loaded_count++;
-		
+		images_loaded_count++;		
 		progress.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%';
 		console.log(progress.innerHTML);
 
@@ -92,8 +91,10 @@ $(window).load(function() {
 		}
 
 	} 
-
 });
+
+
+
 
 
 // Мобильное меню
