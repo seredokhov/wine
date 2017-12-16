@@ -42,6 +42,13 @@ h2 {
 	font-family: "Playfair Display";
 	margin: 0;
 }
+h4 {
+	font-size: 28px;
+	font-weight: 400;
+	color: #000;
+	font-family: "Playfair Display";
+	margin: 0;
+}
 body {
 	font-family: sans-serif;
 	font-size: 16px;
@@ -67,6 +74,14 @@ header.fix {
 	top: 0px;
 	left: 0;
 	right: 0;
+}
+.bg {
+	height: 136px;
+	background: #121212;
+	display: none;
+}
+header.fix + .bg {
+	display: block;
 }
 .container_flex {
 	display: flex;
@@ -240,6 +255,7 @@ a.search_button:hover {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 700;
+	position: relative;
 }
 .description_block h1 {
 	margin-bottom: 90px;
@@ -291,7 +307,8 @@ a.search_button:hover {
 	margin-top: 90px;
 	margin-bottom: 90px;
 }
-.link_block a {
+.link_block a,
+.our_wines_section_5 a.gallery_link {
 	color: #ffffff;
 	text-decoration: none;
 	display: block;
@@ -305,7 +322,8 @@ a.search_button:hover {
 	font-weight: 700;
 	text-transform: uppercase;
 }
-.link_block a:first-child {
+.link_block a:first-child,
+.our_wines_section_5 a.gallery_link {
 	background: #b0976d;
 	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.1) 50%,rgba(0,0,0,.1));
 	background-repeat: no-repeat;
@@ -313,7 +331,8 @@ a.search_button:hover {
 	transition: all .1s linear;
 	margin-right: 30px;
 }
-.link_block a:first-child:hover {
+.link_block a:first-child:hover,
+.our_wines_section_5 a.gallery_link:hover {
 	background-position: 0px 0px;
 }
 .link_block a:last-child {
@@ -680,13 +699,101 @@ a.search_button:hover {
 	font-weight: bold;
 }
 
+/*  Страница НАШИ ВИНА */
+/*=====================*/
+/*Секция 1*/
 
+.our_wines_header_section img {
+	width: 100%;
 
+	object-fit: contain;
+}
+.our_wines_section_2 {
+	padding: 130px 0;
+}
+.our_wines_section_2 .title {
+	line-height: 28px;
+}
+.our_wines_section_2 .title::before {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 1px;
+	background: #b0976d;
+	left: -45px;
+	top: 12px;
+}
+.our_wines_section_2 h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+	margin-bottom: 80px;
+}
+.our_wines_section_2 p {
+	width: 50%;
+}
+/*Секция 3*/
 
+.our_wines_section_3 .bootle_block {
+	padding: 0 !important;
+}
+.our_wines_section_3 .bootle_block .bootle img {
+	width: 100%;
+}
+/*Секция 4*/
 
-
-
-
+.our_wines_section_4 {
+	padding: 150px 0;
+}
+.our_wines_section_4 .title_block {
+	text-align: center;
+	margin-bottom: 55px;
+}
+.our_wines_section_4 p {
+	margin-top: 0;
+	line-height: 1.916;
+}
+.our_wines_section_4 .item {
+	margin-bottom: 35px;
+}
+.our_wines_section_4 .text_row .item {
+	margin-bottom: 90px;
+}
+.our_wines_section_4 .img_block {
+	margin-bottom: 50px;
+}
+.our_wines_section_4 .img_block img {
+	width: 100%;
+	object-fit: cover;
+}
+.our_wines_section_4 h4 {
+	margin-bottom: 40px;
+}
+/*Секция 5*/
+.our_wines_section_5 {
+	background: url('../img/our_wines/our-cellar-background.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 150px 0;
+}
+.our_wines_section_5 .wrap {
+	width: 80%;
+	margin: 0 auto;
+	padding: 90px;
+	background-color: rgb(17,17,17);
+	background-color: rgba(17,17,17,0.8);
+	color: #fff;
+	text-align: center;
+}
+.our_wines_section_5 h2,
+.our_wines_section_5 p {
+	color: #fff;
+	margin-bottom: 40px;
+	font-family: "Playfair Display";
+}
+.our_wines_section_5 a.gallery_link {
+	width: 230px;
+	margin: 0 auto;
+}
 
 
 /*Футер*/
@@ -698,6 +805,7 @@ footer {
 }
 footer .title_block {
 	text-align: center;
+	margin-top: 90px;
 }
 footer h2 {
 	font-size: 48px;

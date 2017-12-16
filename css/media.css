@@ -145,8 +145,12 @@
 	.estate_section > .container {
 		padding: 50px 0;
 	}
-	.visit_section {
+	.visit_section,
+	.our_wines_section_5 {
 		padding: 90px 0;
+	}
+	.our_wines_section_5 .wrap {
+		padding: 90px 10px;
 	}
 }
 

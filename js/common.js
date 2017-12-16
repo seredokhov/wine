@@ -127,12 +127,10 @@ $(function() {
 		if (windowScroll > header.height()) {
 
 			header.addClass("fix");
-			section.css('padding-top', header.height()+ 'px');
 
 		}
 		if (windowScroll <= 0 ) {
 			header.removeClass("fix");
-			section.css('padding-top', '0');
 		}
 	});
 });
@@ -146,7 +144,6 @@ function countAnimate(elem) {
 	var counter = elem.find('.counter');
 	var span = counter.find('span');
 	var time = 1500;
-
 
 	span.each(function(){
 		var self = $(this);
@@ -171,47 +168,19 @@ function countAnimate(elem) {
 $(function() {
 	var bootle = $(".bootle_block");
 
-		
+	
 		bootle.viewportChecker({
 			classToAdd : 'done',
 			callbackFunction: function(elem, action){
-				countAnimate(elem)
+				countAnimate(elem);
 				
 			}
 		})
+	
+		
 
 });
 
-
-
-
-$(function() {
-	var counter = $(".bootle_block").find('.counter');
-	var span = counter.find('span');
-	var time = 2000;
-
-	$(window).load(function() {
-
-		span.each(function(){
-			var self = $(this);
-			var num = +self.text();
-			self.text('0');
-			var startNum = 0;
-			var interval = setInterval(function(){
-				startNum++
-				if ( startNum <= num) {
-					self.text(startNum);
-				}
-				else {
-					clearInterval(interval);
-				}
-
-			},time /  num)
-
-		})
-	});
-
-});
 
 
 // Поиск
