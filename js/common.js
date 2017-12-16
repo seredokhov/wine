@@ -1,11 +1,5 @@
 /* Анимации */
 $(function(){
-	/*$(".who").animated("zoomIn");
-	$(".designer").animated("bounceInDown");
-	$(".programmer").animated("bounceInRight");
-	$(".account_manager").animated("bounceInUp");
-	$(".header_end p").animated("slideInLeft");
-	$(".ul_container").animated("fadeInRight");*/
 	
 		setTimeout(function () {
 		    $(".first").animated("fadeInLeft");
@@ -20,9 +14,6 @@ $(function(){
 		    $(".animate_img").animated("fadeInRight");
 		}, 500)
 
-	
-	//$(".gallery_block").animated("fadeInRight");
-
 });
 
 
@@ -33,7 +24,7 @@ $(function() {
 
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
+	/*$("form").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
@@ -47,7 +38,7 @@ $(function() {
 			}, 1000);
 		});
 		return false;
-	});
+	});*/
 
 	//Chrome Smooth Scroll
 	try {
@@ -126,22 +117,144 @@ $(function(){
 
 // Смещение шапки в момент скрола
 
-	$(function() {
-		var header = $("header");
-		var offset = $(header).offset().top;
-		var section = $('.header_section');
+$(function() {
+	var header = $("header");
+	var offset = $(header).offset().top;
+	var section = $('.header_section');
 
-		$(window).scroll(function (){
-			var windowScroll = $(window).scrollTop();
-			if (windowScroll > header.height()) {
+	$(window).scroll(function (){
+		var windowScroll = $(window).scrollTop();
+		if (windowScroll > header.height()) {
 
-				header.addClass("fix");
-				section.css('padding-top', header.height()+ 'px');
+			header.addClass("fix");
+			section.css('padding-top', header.height()+ 'px');
 
-			}
-			if (windowScroll <= 0 ) {
-				header.removeClass("fix");
-				section.css('padding-top', '0');
-			}
-		});
+		}
+		if (windowScroll <= 0 ) {
+			header.removeClass("fix");
+			section.css('padding-top', '0');
+		}
 	});
+});
+
+
+
+
+// фунция анимация счетчика
+
+function countAnimate(elem) {
+	var counter = elem.find('.counter');
+	var span = counter.find('span');
+	var time = 1500;
+
+
+	span.each(function(){
+		var self = $(this);
+		var num = +self.text();
+		self.text('0');
+		var startNum = 0;
+		var interval = setInterval(function(){
+			startNum++
+			if ( startNum <= num) {
+				self.text(startNum);
+			}
+			else {
+				clearInterval(interval);
+			}
+
+		},time /  num)
+
+	})
+}
+// Запуск функции при скроле
+
+$(function() {
+	var bootle = $(".bootle_block");
+
+		
+		bootle.viewportChecker({
+			classToAdd : 'done',
+			callbackFunction: function(elem, action){
+				countAnimate(elem)
+				
+			}
+		})
+
+});
+
+
+
+
+$(function() {
+	var counter = $(".bootle_block").find('.counter');
+	var span = counter.find('span');
+	var time = 2000;
+
+	$(window).load(function() {
+
+		span.each(function(){
+			var self = $(this);
+			var num = +self.text();
+			self.text('0');
+			var startNum = 0;
+			var interval = setInterval(function(){
+				startNum++
+				if ( startNum <= num) {
+					self.text(startNum);
+				}
+				else {
+					clearInterval(interval);
+				}
+
+			},time /  num)
+
+		})
+	});
+
+});
+
+
+// Поиск
+
+$(function() {
+	var link = $(".search_button");
+	var wrap = $(".search_wrap");
+	var input = wrap.find('.search_input');
+	var close = wrap.find('.close_search');
+
+	link.on('click', function() {
+		wrap.addClass('open');
+		return false
+	})
+	wrap.on('click', function(){
+		$(this).removeClass('open');
+	})
+	close.on('click', function(){
+		wrap.removeClass('open');
+	})
+	// Отмена всплытия
+	input.on('click', function(){
+		event.stopPropagation();
+	})
+
+
+});
+
+// Выпадающие меню в шапке
+if ( $(window).width() > "1200" ) {
+	$(function() {
+		var target = $("ul.header_nav_ul > li");
+		var menu = $("ul.drop_menu");
+
+		target.on('mouseover', function() {
+				$(this).find('ul.drop_menu').addClass('opened');
+		})
+		target.on('mouseout', function() {
+			$(this).find('ul.drop_menu').removeClass('opened');
+		})
+
+
+	});
+}
+
+
