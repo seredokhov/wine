@@ -30,6 +30,7 @@ h1 {
 	font-family: "Playfair Display";
 	margin: 0;
 	font-size: 41px;
+	line-height: normal;
 	font-weight: 400;
 	color: #000;
 	margin: 0;
@@ -37,6 +38,7 @@ h1 {
 }
 h2 {
 	font-size: 34px;
+	line-height: normal;
 	font-weight: 400;
 	color: #000;
 	font-family: "Playfair Display";
@@ -44,10 +46,16 @@ h2 {
 }
 h4 {
 	font-size: 28px;
+	line-height: normal;
 	font-weight: 400;
 	color: #000;
 	font-family: "Playfair Display";
 	margin: 0;
+}
+p {
+	margin: 0;
+	margin-bottom: 15px;
+	line-height: 30px;
 }
 body {
 	font-family: sans-serif;
@@ -130,6 +138,7 @@ ul.drop_menu > li > a:hover {
 ul.header_nav_ul > li ul.drop_menu {
 	/*display: none;*/
 	position: absolute;
+	z-index: 10;
 	min-width: 250px;
 	top: 100%;
 	left: auto;
@@ -137,7 +146,6 @@ ul.header_nav_ul > li ul.drop_menu {
 	background: #121212;
 	padding: 30px;
 	margin: 0;
-
 	visibility: hidden;
 	opacity: 0;
 	transition: all .2s linear;
@@ -708,13 +716,17 @@ a.search_button:hover {
 
 	object-fit: contain;
 }
-.our_wines_section_2 {
+/*Секция 2*/ 
+.our_wines_section_2,
+.estate_section_2 {
 	padding: 130px 0;
 }
-.our_wines_section_2 .title {
+.our_wines_section_2 .title,
+.estate_section_2 .title {
 	line-height: 28px;
 }
-.our_wines_section_2 .title::before {
+.our_wines_section_2 .title::before,
+.estate_section_2 .title::before {
 	content: '';
 	position: absolute;
 	width: 30px;
@@ -723,13 +735,16 @@ a.search_button:hover {
 	left: -45px;
 	top: 12px;
 }
-.our_wines_section_2 h1 {
+.our_wines_section_2 h1,
+.estate_section_2 h1 {
 	font-size: 48px;
 	text-transform: uppercase;
 	margin-bottom: 80px;
 }
-.our_wines_section_2 p {
+.our_wines_section_2 p,
+.estate_section_2 p {
 	width: 50%;
+	line-height: 30px;
 }
 /*Секция 3*/
 
@@ -794,6 +809,325 @@ a.search_button:hover {
 	width: 230px;
 	margin: 0 auto;
 }
+
+
+/*  Страница OUR_STORY */
+/*=====================*/
+/*Секция 1*/
+
+.our_story_section_1 {
+	background: #000;
+	padding: 130px 0;
+	text-align: center;
+}
+.our_story_section_1 h1 {
+	color: #fff;
+	margin-bottom: 80px;
+	font-size: 48px;
+	line-height: 65px;
+	text-transform: uppercase;
+}
+.our_story_section_1  p {
+	color: rgba(255,255,255,0.3);
+	max-width: 570px;
+	margin: 0 auto;
+	line-height: 30px;
+}
+
+/*Секция 2*/
+.our_story_section_2 img {
+	width: 100%;
+	height: auto;
+}
+/*Секция 3*/
+.our_story_section_3  {
+	background: url('../img/our_story/our-story-back-image.jpg') no-repeat;
+	background-size: cover;
+	padding: 120px 0 150px;
+}
+
+.our_story_section_3 h2 {
+	margin: 30px 0 15px;
+}
+.our_story_section_3 p {
+	margin: 0;
+	margin-bottom: 15px;
+	line-height: 30px;
+}
+.our_story_section_3 .title_block {
+	text-align: center;
+	padding: 90px 0 55px;
+}
+
+.our_story_section_3 h1 {
+	line-height: normal;
+	display: block;
+	margin: 0 auto;
+	max-width: 560px;
+}
+
+/*Секция 4*/
+.our_story_section_4 {
+	padding: 150px 0;
+	background: url('../img/our_story/our-story-back-image-2.jpg') no-repeat;
+	background-position: 0px 100%;
+}
+
+.our_story_section_4 .title {
+	margin-bottom: 55px;
+}
+.our_story_section_4 .title:not(:first-of-type) {
+	padding-top: 25px;
+}
+.our_story_section_4 p {
+	line-height: 30px;
+	margin-bottom: 35px;
+}
+.our_story_section_4 p.strong {
+	font-weight: bold;
+}
+
+/*Секция 5*/
+.our_story_section_5 {
+	padding: 150px 0;
+	background: #f1f1f1;
+}
+.our_story_section_5 .timeline_section {
+	position: relative;
+
+}
+.our_story_section_5 .timeline_section::before {
+	content: "";
+	display: block;
+	height: 100%;
+	width: 4px;
+	background: #b0976d;
+	position: absolute;
+	left: 50%;
+	margin-left: -2px;
+}
+.our_story_section_5 .title_block {
+	margin-bottom: 90px;
+}
+.timeline_block {
+	margin-bottom: 90px;
+	position: relative;
+	overflow: hidden;
+}
+.timeline_block:last-child {
+	margin-bottom: 0;
+}
+.timeline_block .round {
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 60px;
+	background: #b0976d;
+	color: #fff;
+	font-size: 30px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -30px;
+}
+.timeline_block .round img {
+	margin-bottom: 5px;
+}
+.timeline_block .card {
+	width: 40%;
+	float: left;
+	background: #fff;
+	position: relative;
+}
+.timeline_block .card img {
+	width: 100%;
+	height: auto;
+}
+.timeline_block .card .card_description {
+	padding: 60px;
+}
+.timeline_block .card .title {
+	margin-bottom: 30px;
+}
+.timeline_block .card h4 {
+	font-family: "Playfair Display";
+	font-size: 60px;
+	line-height: 60px;
+	width: 100%;
+	position: absolute;
+	top: -10px;
+	left: 145%;
+}
+.timeline_block:nth-child(2n) .card {
+	float: right;
+}
+.timeline_block:nth-child(2n) .card h4 {
+	left: auto;
+	right: 145%;
+	text-align: right;
+}
+
+
+/*  Страница ESTATE */
+/*=====================*/
+/*Секция 1*/
+
+.estate_section_1 img {
+	width: 100%;
+	height: auto;
+}
+
+/*Секция 3*/
+.estate_section_3 .slider {
+	position: relative;
+}
+.estate_section_3 #owl-demo .owl-item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.estate_section_3 .customNavigation > a {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color: #fff;
+	font-size: 60px;
+	background: rgba(0,0,0,.8);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	transition: all .3s linear;
+	opacity: 0;
+}
+.estate_section_3 .customNavigation > a.prev {
+	left: -50px;
+}
+.estate_section_3 .customNavigation > a.next {
+	right: -50px;
+}
+.estate_section_3 .slider:hover .customNavigation > a.prev {
+	left: 0;
+	opacity: .7;
+}
+.estate_section_3 .slider:hover .customNavigation > a.next {
+	right: 0;
+	opacity: .7;
+}
+.estate_section_3 .customNavigation > a:hover {
+	opacity: 1 !important;
+}
+.estate_section_3 .owl-pagination {
+	min-width: 230px;
+	min-height: 60px;
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	transform: translate(-50%, 0);
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.estate_section_3 .owl-pagination > div {
+	margin: 6px;
+}
+.estate_section_3 .owl-pagination span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #333;
+	transition: all .1s linear;
+}
+.estate_section_3 .owl-pagination > div.active > span,
+.estate_section_3 .owl-pagination > div:hover  span {
+	background: #b0976d;
+}
+
+/*Секция 4*/
+.estate_section_4 {
+	padding: 150px 0;
+}
+.estate_section_4 .wrap {
+	padding: 0 10%;
+}
+
+.estate_section_4 .title_block {
+	margin-bottom: 55px;
+	text-align: center;
+}
+.estate_section_4 .wrap ul {
+	padding: 0;
+	margin: 0;
+	margin-top: 35px;
+	list-style: none;
+}
+.estate_section_4 .wrap ul > li {
+	overflow: hidden;
+}
+.estate_section_4 .wrap ul > li > div {
+	width: 50%;
+	float: left;
+	line-height: 30px;
+}
+.estate_section_4 .wrap ul > li > div.char_name {
+	position: relative;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000;
+}
+.estate_section_4 .wrap ul > li > div.char {
+	font-size: 14px;
+}
+.estate_section_4 .wrap ul > li > div.char_name::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 1px;
+	background: #b0976d;
+	float: right;
+	position: relative;
+	top: 13px;
+	margin-right: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Футер*/
@@ -950,7 +1284,7 @@ footer .copy {
 	width: 100%;
 	height: 100%;
 	background: #000;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	transform: translate(0px, -100%) scale(0, 0);
 	opacity: 0;
 	z-index: 9999;

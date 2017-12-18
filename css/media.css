@@ -101,6 +101,14 @@
 	footer .footer_bottom {
 		margin-top: 90px;
 	}
+	.timeline_block .card {
+		float: none;
+		width: 100%;
+	}
+	.timeline_block .card h4 {
+		position: static;
+		text-align: left !important;
+	}
 }
 
 /* Small Devices, Tablets */
@@ -142,7 +150,9 @@
 	.varieties_section .sort {
 		padding-bottom: 50px;
 	}
-	.estate_section > .container {
+	.estate_section > .container,
+	.our_story_section_4,
+	.our_story_section_5 {
 		padding: 50px 0;
 	}
 	.visit_section,
@@ -151,6 +161,12 @@
 	}
 	.our_wines_section_5 .wrap {
 		padding: 90px 10px;
+	}
+	.our_story_section_4 {
+		background: none;
+	}
+	.our_story_section_3 {
+		padding: 90px 0 45px;
 	}
 }
 
@@ -163,6 +179,20 @@
 	.link_block a {
 		margin: 0;
 		width: 100%;
+	}
+	.timeline_block .card .card_description {
+		padding: 60px 20px;
+	}
+	.footer_menu ul {
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer_menu ul a {
+		padding: 0;
+		margin-bottom: 15px;
+	}
+	footer .footer_bottom > div {
+		padding: 0 20px;
 	}
 }
 
