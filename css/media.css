@@ -42,6 +42,10 @@
 		display: none;
 		transition: none;
 	}
+	.our_wines_section_2 p,
+	.estate_section_2 p {
+		width: 100%;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -109,6 +113,10 @@
 		position: static;
 		text-align: left !important;
 	}
+	.estate_section_8 .description_block,
+	.our-winemakers_section_3 .description_block {
+		padding: 10%;
+	}
 }
 
 /* Small Devices, Tablets */
@@ -152,11 +160,14 @@
 	}
 	.estate_section > .container,
 	.our_story_section_4,
-	.our_story_section_5 {
+	.our_story_section_5,
+	.awards_section_3 {
 		padding: 50px 0;
 	}
 	.visit_section,
-	.our_wines_section_5 {
+	.our_wines_section_5,
+	.our_wines_section_2,
+	.estate_section_2 {
 		padding: 90px 0;
 	}
 	.our_wines_section_5 .wrap {
@@ -167,6 +178,15 @@
 	}
 	.our_story_section_3 {
 		padding: 90px 0 45px;
+	}
+	.estate_section_9 a.contact_link {
+		padding: 0 15px;
+	}
+	.estate_section_7 {
+		padding: 0;
+	}
+	.awards_section_3 .clearfix > div {
+		padding: 15px;
 	}
 }
 
@@ -193,6 +213,11 @@
 	}
 	footer .footer_bottom > div {
 		padding: 0 20px;
+	}
+	.our-winemakers_section_3 blockquote {
+		padding-left: 55px;
+		font-size: 20px;
+		line-height: 30px;
 	}
 }
 
