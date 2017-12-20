@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Заголовок</title>
+	<meta name="description" content="">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;subset=cyrillic" rel="stylesheet">
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="libs/animate/animate.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+
+	<!-- OWL Carousel -->
+	<link rel="stylesheet" href="libs/owl carousel/owl.carousel.css">
+	<link rel="stylesheet" href="libs/owl carousel/owl.transitions.css">
+
+	<!-- Стили шаблона -->
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+
+</head>
+
+<body>
+	<header>
+		<div class="container container_flex">
+			<div class="navbar">
+				<div class="logo_block">
+					<a href="#" class="logo">
+						<img src="img/logo.png" alt="logo">
+					</a>
+				</div>
+				<button type="button" class="mob_menu_btn hidden-lg">
+					<span class="hamb">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</button>
+			</div>
+			<nav class="header_nav">
+				<ul class="header_nav_ul">
+					<li>
+						<a href="#" class="nav_link active">Главная</a>
+					</li>
+					<li>
+						<a href="#" class="nav_link">О нас</a>
+						<ul class="drop_menu">
+							<li><a href="#">Наша история </a></li>
+							<li><a href="#">Наши вина</a></li>
+							<li><a href="#">Наше производство</a></li>
+							<li><a href="#">Наши виноделы</a></li>
+							<li><a href="#">Наши награды</a></li>
+							<li><a href="#">Галерея</a></li>
+							<li><a href="#">Новости</a></li>
+							<li><a href="#">Вопрос – ответ</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" class="nav_link">Каталог продукции</a>
+						<ul class="drop_menu">
+							<li><a href="#">Белое вино</a></li>
+							<li><a href="#">Красное вино</a></li>
+							<li><a href="#">Вино в упаковке тетра пак</a></li>
+							<li><a href="#">Игристое вино</a></li>
+							<li><a href="#">Сидр</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" class="nav_link">События</a>
+					</li>
+					<li>
+						<a href="#" class="nav_link">Где купить?</a>
+					</li>
+					<li>
+						<a href="#" class="nav_link">Контакты</a>
+					</li>
+					<li class="hidden-lg mobile_search">
+						<a href="#"><i class="fa fa-search"></i>Поиск</a>
+					</li>
+				</ul>
+			</nav>
+			<a href="#" class="search_button visible-lg">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>		
+	</header>
+	<div class="bg"></div>
+	<main>
+		<section class="catalog_section_1">
+			<div class="container">
+				<h1>Events</h1>
+			</div>
+		</section>
+		<div class="events_section_2">
+			<div class="container">
+				<form action="#" class="events_form">
+					<div class="collapse_link">Find Events<i class="fa fa-caret-down" aria-hidden="true"></i></div>
+					<div class="filter_block">
+						<div class="form_group">
+							<label for="date_input">Events From</label>
+							<input type="text" id="date_input" placeholder="date">
+						</div>
+						<div class="form_group">
+							<label for="keyword_input">Events From</label>
+							<input type="text" id="keyword_input" placeholder="keyword">
+						</div>
+						<div class="submit_block">
+							<input type="submit" value="Find Events">
+						</div>
+					</div>
+					<div class="sort_block">
+						<label>View As</label>
+						<ul>
+							<li class="active"><a href="#" class="sort_list">List</a></li>
+							<li><a href="#" class="sort_month">Month</a></li>
+							<li><a href="#" class="sort_day">Day</a></li>
+						</ul>
+					</div>
+				</form>
+				<div class="events_list">
+					<article class="row article">
+						<div class="col-sm-8">
+							<div class="title">
+								<span class="start_date">January 1, 2016</span>
+								<span class="sep"> - </span>
+								<span class="end_date">December 31, 2020</span>
+							</div>
+							<a href="#"><h2>Wine Wednesdays</h2></a>
+							<div class="event_cost_block">
+								<span>Price -</span>
+								<span class="cost">$120</span>
+							</div>
+							<p>Curabitur aliquam tellus nec velit lacinia, quis feugiat tellus malesuada. Cras nulla lorem, bibendum quis ultricies sit amet, suscipit vitae diam.</p>
+							<a href="#" class="more">Find out more »</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="img_link">
+								<img src="img/events/villenoir-events-1.jpg" alt="event">
+							</a>
+						</div>
+					</article>
+					<article class="row article">
+						<div class="col-sm-8">
+							<div class="title">
+								<span class="start_date">May 1, 2016</span>
+								<span class="sep"> - </span>
+								<span class="end_date">October 31, 2020</span>
+							</div>
+							<a href="#"><h2>Estate tour & Tasting season</h2></a>
+							<div class="event_cost_block">
+								<span>Price -</span>
+								<span class="cost">$330</span>
+							</div>
+							<p>Cras maximus magna eget volutpat interdum. Donec pulvinar pellentesque risus id malesuada. Mauris laoreet convallis mauris nec varius.</p>
+							<a href="#" class="more">Find out more »</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="img_link">
+								<img src="img/events/villenoir-events-3.jpg" alt="event">
+							</a>
+						</div>
+					</article>
+					<article class="row article">
+						<div class="col-sm-8">
+							<div class="title">
+								<span class="start_date">June 1, 2016</span>
+								<span class="sep"> - </span>
+								<span class="end_date">August 31, 2020</span>
+							</div>
+							<a href="#"><h2>Summer Vineyard Hike</h2></a>
+							<p>Suspendisse potenti. Nulla facilisi. In neque metus, sagittis sed orci vitae, volutpat lacinia massa. Mauris convallis efficitur luctus. Praesent sagittis dui at mi mollis fermentum.</p>
+							<a href="#" class="more">Find out more »</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="img_link">
+								<img src="img/events/villenoir-events-3.jpg" alt="event">
+							</a>
+						</div>
+					</article>
+					<article class="row article">
+						<div class="col-sm-8">
+							<div class="title">
+								<span class="start_date">September 1, 2016</span>
+								<span class="sep"> - </span>
+								<span class="end_date">October 31, 2020</span>
+							</div>
+							<a href="#"><h2>Summer Vineyard Hike</h2></a>
+							<div class="event_cost_block">
+								<span>Price -</span>
+								<span class="cost">$100</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu nulla justo. Fusce semper quis magna eget cursus. In hac habitasse platea dictumst.</p>
+							<a href="#" class="more">Find out more »</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="img_link">
+								<img src="img/events/villenoir-events-2.jpg" alt="event">
+							</a>
+						</div>
+					</article>
+				</div>
+				<div class="btn_block">
+					<a href="#" class="export">+ Export Events</a>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<footer>
+		<div class="container">
+			<div class="title_block">
+				<div class="title">Villenoir promise</div>
+				<h2>We make good wines</h2>
+			</div>
+			<div class="footer_bottom">
+				<div class="footer_menu">
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Returns</a></li>
+					</ul>
+				</div>
+				<div class="footer_social">
+					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href="#"><i class="fa fa-dribbble"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="copy">© 2017 VILLENOIR.  All rights reserved</div>
+			</div>
+		</div>
+	</footer>
+	<div class="search_wrap">
+		<button type="button" class="close_search">x</button>
+		<form action="">
+			<input type="text" class="search_input" placeholder="Поиск...">
+			<button type="submit" class="search_btn">Поиск</button>
+		</form>
+	</div>
+
+
+
+
+
+
+
+
+	<!-- Здесь пишем код -->
+	
+	<div class="hidden"></div>
+
+	<div class="preload">
+		<div class="inner">
+			<div class="rotate"></div>
+			<div class="progress" id="progress">0%</div>
+		</div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script src="libs/waypoints/waypoints.min.js"></script>
+	<script src="libs/animate/animate-css.js"></script>
+	<script src="libs/plugins-scroll/jquery.viewportchecker.js"></script>
+	
+	<script src="libs/owl carousel/owl.carousel.min.js"></script>
+
+	<script src="js/common.js"></script>
+
+
+	<script>
+		/*
+		$(document).ready(function() {
+		 
+		  $("#owl-demo").owlCarousel({
+		    autoPlay : false,
+		    stopOnHover : true,
+		    navigation:true,
+		    paginationSpeed : 1000,
+		    goToFirstSpeed : 2000,
+		    singleItem : true,
+		    autoHeight : true,
+		    transitionStyle:"fade"
+		  });
+		 
+		});*/
+		$(document).ready(function() {
+		
+		var owl = $("#owl-demo");
+		
+			owl.owlCarousel({
+				items : 1,
+				navigation: false,
+				navigationText : false,
+				autoHeight: true,
+				transitionStyle: "fade",
+				mouseDrag: false
+		  });
+		 
+		  // Custom Navigation Events
+		  $(".next").click(function(){
+		    owl.trigger('owl.next');
+		  })
+		  $(".prev").click(function(){
+		    owl.trigger('owl.prev');
+		  })
+		  $(".play").click(function(){
+		    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+		  })
+		  $(".stop").click(function(){
+		    owl.trigger('owl.stop');
+		  })
+		 
+		});
+	</script>
+	
+</body>
+</html>	

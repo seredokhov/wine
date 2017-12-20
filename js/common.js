@@ -226,4 +226,16 @@ if ( $(window).width() > "1200" ) {
 	});
 }
 
+// Collapse формы споиска событий
+$(function() {
+	var link = $('.collapse_link');
+	var collapse = $('.filter_block');
+	var i = link.find('i');
 
+	link.on('click', function() {
+		collapse.slideToggle();
+		i.toggleClass('fa-caret-down fa-caret-up')
+	})
+
+
+});

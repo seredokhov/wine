@@ -46,6 +46,9 @@
 	.estate_section_2 p {
 		width: 100%;
 	}
+	.bg {
+		height: 98px;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -120,8 +123,17 @@
 	.blog_section_1,
 	.blog_section_2,
 	.faq_section_2,
-	.catalog_section_1 {
+	.catalog_section_1,
+	.events_section_2 {
 		padding: 90px 0;
+	}
+	.events_section_2 .events_form .filter_block,
+	.events_section_2 .events_form .sort_block,
+	.events_section_2 .events_form .filter_block > div {
+		width: 100%;
+	}
+	.events_section_2 .events_form .collapse_link {
+		display: block;
 	}
 }
 
@@ -167,7 +179,8 @@
 	.estate_section > .container,
 	.our_story_section_4,
 	.our_story_section_5,
-	.awards_section_3 {
+	.awards_section_3,
+	.events_section_2 {
 		padding: 50px 0;
 	}
 	.visit_section,
@@ -194,6 +207,9 @@
 	}
 	.awards_section_3 .clearfix > div {
 		padding: 15px;
+	}
+	.events_section_2 .btn_block a {
+		width: 100%;
 	}
 }
 
