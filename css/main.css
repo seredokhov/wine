@@ -16,7 +16,8 @@
 }
 ul {
 	list-style: none;
-	margin: 0
+	margin: 0;
+	padding: 0;
 }
 a {
 	text-decoration: none;
@@ -1321,6 +1322,86 @@ a.search_button:hover {
 .awards_section_3 .clearfix > div {
 	padding: 0;
 }
+
+/*  Страница BLOG */
+/*=====================*/
+/*Секция 1*/
+.blog_section_1 {
+	background: #000;
+	padding: 130px 0;
+	text-align: center;
+}
+.blog_section_1 h1 {
+	color: #fff;
+	font-size: 48px;
+	text-transform: uppercase;
+}
+/*Секция 2*/
+
+.blog_section_2 {
+	padding: 150px 0;
+}
+.blog_section_2 h4 {
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+.blog_section_2 .posts_ul li {
+	padding-bottom: 5px;
+}
+.blog_section_2 .posts_ul a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	line-height: 30px;
+	font-size: 15px;
+}
+.blog_section_2 .date {
+	display: block;
+	font-style: italic;
+	color: #999;
+	font-size: 14px;
+}
+.blog_section_2 .new {
+	margin-bottom: 70px;
+}
+.blog_section_2 .new > a {
+	display: block;
+	text-decoration: none;
+}
+.new .img_block {
+	margin-bottom: 70px;
+}
+.new .img_block img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+.new h2 {
+	margin-bottom: 70px;
+	font-size: 48px;
+}
+.new p {
+	margin-bottom: 15px;
+}
+.new .post_author {
+	margin-bottom: 15px;
+}
+.new .post_author a,
+.new .content a.more {
+	color: #b0976d;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
