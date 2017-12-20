@@ -1326,12 +1326,14 @@ a.search_button:hover {
 /*  Страница BLOG */
 /*=====================*/
 /*Секция 1*/
-.blog_section_1 {
+.blog_section_1,
+.catalog_section_1 {
 	background: #000;
 	padding: 130px 0;
 	text-align: center;
 }
-.blog_section_1 h1 {
+.blog_section_1 h1,
+.catalog_section_1 h1 {
 	color: #fff;
 	font-size: 48px;
 	text-transform: uppercase;
@@ -1413,9 +1415,109 @@ a.search_button:hover {
 	margin-bottom: 15px;
 }
 
+/*  Страница CATALOG */
+/*=====================*/
+/*Секция 1*/
 
+.catalog_section_1 p {
+	max-width: 570px;
+	margin: 0 auto;
+	margin-top: 80px;
+	color: rgba(255,255,255,0.3);
+}
+/*Секция 2*/
 
+.catalog_section_2 {
+	padding: 150px 0;
+}
+.catalog_section_2 .row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+.catalog_section_2 article {
+	margin-bottom: 30px;
+}
+.catalog_section_2 article > a {
+	display: block;
+	text-decoration: none;
+}
+.catalog_section_2 article h2  {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 50px;
+	padding: 0 15px;
+}
+.catalog_section_2 article .img_block {
+	background: #f2f2f2;
+	padding: 50px;	
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.catalog_section_2 article .img_block img {
+	width: 100%;
+}
 
+.catalog_section_2 article .product_info {
+	padding: 35px;
+	background: #f2f2f2;
+}
+.catalog_section_2 article ul.info_ul > li {
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 20px;
+}
+.catalog_section_2 article ul.info_ul > li > div {
+	width: 50%;
+}
+.catalog_section_2 article ul.info_ul > li > div:first-of-type {
+	float: left;
+	text-align: left;
+	padding-right: 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	line-height: 30px;
+}
+.catalog_section_2 article ul.info_ul > li > div:last-of-type {
+	float: right;
+	text-align: right;
+	padding-left: 20px;
+	font-size: 16px;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+.catalog_section_2 article ul.info_ul > li::after {
+	content: "";
+	background: #b0976d;
+	position: absolute;
+	width: 30px;
+	height: 1px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, 0);
+}
+
+.catalog_section_2 article a.add_to_cart {
+	display: block;
+	width: 100%;
+	padding: 18px 45px;
+	color: #fff;
+	background-color: #000;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: 2px;
+	transition: all 0.2s ease-in-out;
+	margin-top: 30px;
+	text-decoration: none;
+	text-align: center;
+}
+.catalog_section_2 article a.add_to_cart:hover {
+	background: #b0976d;
+}
 
 
 
