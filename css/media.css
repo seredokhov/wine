@@ -118,7 +118,8 @@
 		padding: 10%;
 	}
 	.blog_section_1,
-	.blog_section_2 {
+	.blog_section_2,
+	.faq_section_2 {
 		padding: 90px 0;
 	}
 }
@@ -224,7 +225,8 @@
 		line-height: 30px;
 	}
 	.blog_section_1,
-	.blog_section_2 {
+	.blog_section_2,
+	.faq_section_2 {
 		padding: 30px 0;
 	}
 	.new h2 {
