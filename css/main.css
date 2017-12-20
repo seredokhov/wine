@@ -1518,9 +1518,13 @@ a.search_button:hover {
 .catalog_section_2 article a.add_to_cart:hover {
 	background: #b0976d;
 }
-
-
-
+/*  Страница CATALOG_Category */
+/*=====================*/
+/*Секция 2*/
+.catalog_img_section img {
+	width: 100%;
+	height: auto;
+}
 
 
 
