@@ -252,10 +252,13 @@ $(function() {
 	var smallSrc;
 	var smallAlt;
 	var timer;
+	var index;
 	//Кнопки
 	var close = $('.close_block');
 	var next = modal.find('.next');
 	var prev = modal.find('.prev');
+	var next2 = modal.find('.link_next');
+	var prev2 = modal.find('.link_prev');
 	var resize = modal.find('.resize');
 	var play = modal.find('.play');
 	//функции
@@ -266,7 +269,11 @@ $(function() {
 		}
 	var modalToggle = function() {
 		overlay.fadeToggle();
-		modal.fadeToggle();
+		modal.fadeToggle(function(){
+			modal.removeClass('lg');
+		});
+		play.removeClass('played');
+		play.find('i').removeClass('fa-pause').addClass('fa-play');
 	}
 	var photoChange =  function() {
 		smallSrc = imgBlock.eq(index).find('img').attr('src');
@@ -275,8 +282,24 @@ $(function() {
 			imgLarge.attr('src', smallSrc).attr('alt', smallAlt).fadeIn(100);
 		})
 	}
-	//Индекс блока с картинкой (Замыкание)
-	var index;
+	var nextImg = function() {
+		if(index >= imgBlock.length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+		photoChange();
+		textFilling();
+	}
+	var prevImg = function(){
+		if(index <= 0) {
+			index = imgBlock.length - 1;
+		} else {
+			index--;
+		}
+		photoChange();
+		textFilling();
+	}
 
 	//События
 	// Начало работы с галлереей при клике на картинку
@@ -288,49 +311,39 @@ $(function() {
 		modalToggle();
 		textFilling();
 	})
-	
+
 	play.on('click', function(){
 		$(this).toggleClass('played');
 		$(this).find('i').toggleClass('fa-play fa-pause');
 		if ( $(this).hasClass('played')) {
 			timer = setInterval(function(){
-				if(index >= imgBlock.length - 1) {
-					index = 0;
-				} else {
-					index++;
-				}		
-				photoChange();
-				textFilling();
+				nextImg();
 			}, 5000);
 		}
 		else {
 			clearInterval(timer);
 			
-		}
-		
+		}		
 	})
 
 	next.on('click', function() {
-		if(index >= imgBlock.length - 1) {
-			index = 0;
-		} else {
-			index++;
-		}		
-		photoChange();
-		textFilling();
+		nextImg();		
 	})
 	prev.on('click', function() {
-		if(index <= 0) {
-			index = imgBlock.length - 1;
-		} else {
-			index--;
-		}
-		photoChange();
-		textFilling();
+		prevImg();
+	})
+	next2.on('click', function() {
+		nextImg();		
+	})
+	prev2.on('click', function() {
+		prevImg();
 	})
 
 	resize.on('click', function(){
-		modal.toggleClass('lg');
+		modal.fadeOut(function(){
+			modal.toggleClass('lg');
+		});		
+		modal.fadeIn();
 	})
 
 	close.on('click', function() {

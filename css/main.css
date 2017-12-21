@@ -1763,6 +1763,7 @@ a.search_button:hover {
 	opacity: 0.7;
 	z-index: 100;
 	display: none;
+	cursor: pointer;
 }
 .gallery_popup {
 	max-width: 80%;
@@ -1782,13 +1783,52 @@ a.search_button:hover {
 .gallery_popup.lg {
 	max-width: 100%;
 	max-height: 100%;
-	width: 100%;
+	width: max-content;
 	height: auto;
 
 }
 .gallery_popup .photo_large {
 	height: auto;
 	text-align: center;
+	position: relative;
+}
+.gallery_popup .photo_large .left,
+.gallery_popup .photo_large .right {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.gallery_popup .photo_large .right {
+	left: auto;
+	right: 0;
+}
+.gallery_popup .photo_large .left .link_prev,
+.gallery_popup .photo_large .right .link_next {
+	position: absolute;
+	left: -5px;
+	top: 50%;
+	width: 35px;
+	height: 30px;
+	background: transparent;
+	transform: translate(0, -100%);
+	font-size: 25px;
+	line-height: 29px;
+	color: transparent;
+	cursor: pointer;
+	visibility: hidden;
+	border-radius: 5px;
+	transition: all ease-in-out 0.3s;
+}
+.gallery_popup .photo_large .right .link_next {
+	left: auto;
+	right: -5px;
+}
+.gallery_popup .photo_large > div:hover .link {
+	visibility: visible;
+	background: #fff;
+	color: #888;
 }
 .gallery_popup .photo_large img {
 	max-width: 100%;
