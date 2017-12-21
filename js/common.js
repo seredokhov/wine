@@ -358,3 +358,130 @@ $(function() {
 
 
 });
+
+
+// Работа с гугл картой
+
+function initMap () {
+
+
+	// Элемент с картой
+	var block = document.getElementById('map');
+
+	// Объект параметров карты
+	var option = {
+		zoom : 14,
+		center: { lat : 46.013643, lng : 2.273761 }
+	}
+
+	// Добавление карты
+	// block - елемент в котором отобразить карту
+	// option - объект параметров карты
+	var myMap = new google.maps.Map(block, option);
+
+	// Массив, содержащий объекты параметров для каждого маркера на карте
+	var markers = [
+		{
+			cordinates : { lat : 46.013643, lng : 2.273761 },
+			image : "img/marker.png",
+			content : '<h1>Hey!</h1>'
+		}
+	]
+
+	// обход массива в цикле и добавления маркеров
+	for ( var i = 0; i < markers.length; i++ ) {
+		addMarker(markers[i]);
+	}
+
+	// Функция добавления маркера
+	function addMarker(data) {
+		var marker = new google.maps.Marker({
+			position : data.cordinates,
+			map : myMap
+		})
+		if ( data.image ) {
+			marker.setIcon(data.image);
+		}
+		if ( data.content ) {
+			var infoWindow = new google.maps.InfoWindow({
+				content : data.content
+			})
+			marker.addListener('click', function(){
+				infoWindow.open(myMap, marker);
+			})
+		}
+	}
+
+}
+
+// Валидация формы 
+
+
+$(function() {
+	var form = $('#contact_form');
+	var nameInput = form.find('#name');
+	var subjectInput = form.find('#subject');
+	var textInput = form.find('#text');
+	var phoneInput = form.find('#phone');
+	var emailInput = form.find('#email');
+	var messageBlock;
+
+	var valid = function(target, message) {
+		$(target).siblings('i').removeClass('fa-asterisk fa-times').addClass('fa-check');
+		$(target).removeClass('error');
+		$(target).siblings('.message').text(message);
+	}
+	var invalid = function(target, message){
+		$(target).siblings('i').removeClass('fa-check fa-asterisk').addClass('fa-times');
+		$(target).addClass('error');
+		$(target).siblings('.message').text(message);
+	}
+
+	// Валидация текстовых полей, проверка на пустоту
+	var textValidation = function(e) {
+		var txtMesage;
+		if ( $(this).val().length > 0 ) {
+			txtMesage = '';
+			valid(e.target, txtMesage);
+		}
+		else {
+			txtMesage = 'Поле не может быть пустым'
+			invalid(e.target, txtMesage);
+		}
+	}
+	// Валидация числовых полей, проверка на чило
+	var numValidation = function(e) {
+		var txtMesage;
+		if ( $.isNumeric( $(this).val() ) ) {
+			txtMesage = '';
+			valid(e.target, txtMesage);
+		}
+		else {
+			txtMesage = 'Некорректный номер'
+			invalid(e.target, txtMesage);
+		}
+	}
+	// Валидацие Email
+
+	var emailValidation = function(e) {
+		var txtMessage;
+
+		if ( /@/.test( $(this).val() ) ) {
+			txtMesage = '';
+			valid(e.target, txtMesage);
+		}
+		else {
+			txtMesage = 'Некорректный email'
+			invalid(e.target, txtMesage);
+		}
+
+	}
+
+	nameInput.on('keyup', textValidation );
+	subjectInput.on('keyup', textValidation );
+	phoneInput.on('keyup', numValidation );
+	textInput.on('keyup', textValidation );
+	emailInput.on('keyup', emailValidation );
+
+});
+

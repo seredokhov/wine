@@ -212,6 +212,9 @@
 	.gallery_section_2 .img_block {
 		width: 100%;
 	}
+	.contacts_section_3 .info_block {
+		margin-bottom: 40px !important;
+	}
 }
 
 /* Extra Small Devices, Phones */
