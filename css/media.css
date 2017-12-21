@@ -208,7 +208,8 @@
 	.awards_section_3 .clearfix > div {
 		padding: 15px;
 	}
-	.events_section_2 .btn_block a {
+	.events_section_2 .btn_block a,
+	.gallery_section_2 .img_block {
 		width: 100%;
 	}
 }

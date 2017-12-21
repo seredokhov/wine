@@ -239,3 +239,109 @@ $(function() {
 
 
 });
+
+
+
+
+// Галерея
+$(function() {
+	var imgBlock = $('.gallery_section_2').find('.img_block');
+	var overlay = $('.overlay');
+	var modal = $('.gallery_popup');
+	var imgLarge = modal.find('.photo_large').find('img');
+	var smallSrc;
+	var smallAlt;
+	var timer;
+	//Кнопки
+	var close = $('.close_block');
+	var next = modal.find('.next');
+	var prev = modal.find('.prev');
+	var resize = modal.find('.resize');
+	var play = modal.find('.play');
+	//функции
+	var textFilling = function() {
+		modal.find('.index').text(index + 1);
+		modal.find('.sum').text(imgBlock.length);
+		modal.find('.img_name').text(smallAlt);
+		}
+	var modalToggle = function() {
+		overlay.fadeToggle();
+		modal.fadeToggle();
+	}
+	var photoChange =  function() {
+		smallSrc = imgBlock.eq(index).find('img').attr('src');
+		smallAlt = imgBlock.eq(index).find('img').attr('alt');
+		imgLarge.fadeOut(100, function(){
+			imgLarge.attr('src', smallSrc).attr('alt', smallAlt).fadeIn(100);
+		})
+	}
+	//Индекс блока с картинкой (Замыкание)
+	var index;
+
+	//События
+	// Начало работы с галлереей при клике на картинку
+	imgBlock.on('click', function() {
+		smallSrc = $(this).find('img').attr('src');
+		smallAlt = $(this).find('img').attr('alt');
+		index = +$(this).index();
+		imgLarge.attr('src', smallSrc).attr('alt', smallAlt);
+		modalToggle();
+		textFilling();
+	})
+	
+	play.on('click', function(){
+		$(this).toggleClass('played');
+		$(this).find('i').toggleClass('fa-play fa-pause');
+		if ( $(this).hasClass('played')) {
+			timer = setInterval(function(){
+				if(index >= imgBlock.length - 1) {
+					index = 0;
+				} else {
+					index++;
+				}		
+				photoChange();
+				textFilling();
+			}, 5000);
+		}
+		else {
+			clearInterval(timer);
+			
+		}
+		
+	})
+
+	next.on('click', function() {
+		if(index >= imgBlock.length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}		
+		photoChange();
+		textFilling();
+	})
+	prev.on('click', function() {
+		if(index <= 0) {
+			index = imgBlock.length - 1;
+		} else {
+			index--;
+		}
+		photoChange();
+		textFilling();
+	})
+
+	resize.on('click', function(){
+		modal.toggleClass('lg');
+	})
+
+	close.on('click', function() {
+		modalToggle();
+		clearInterval(timer);
+	})
+
+	overlay.on('click', function() {
+		modalToggle();
+		clearInterval(timer);
+	})
+
+
+});
