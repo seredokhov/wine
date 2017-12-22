@@ -98,7 +98,15 @@
 			<a href="#" class="search_button visible-lg">
 				<i class="fa fa-search"></i>
 			</a>
-		</div>		
+		</div>
+		<!--  Поиск   -->
+		<div class="search_wrap">
+			<button type="button" class="close_search">x</button>
+			<form action="">
+				<input type="text" class="search_input" placeholder="Поиск...">
+				<button type="submit" class="search_btn">Поиск</button>
+			</form>
+		</div>	
 	</header>
 	<div class="bg"></div>
 	<main>
@@ -225,25 +233,19 @@
 		</div>
 		<div class="resize"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>
 	</div>
-	<div class="overlay"></div>
 
 
-
-
-
-
-
-
-	<!-- Здесь пишем код -->
 	
-	<div class="hidden"></div>
-
+	<!-- Прелоадер -->
 	<div class="preload">
 		<div class="inner">
 			<div class="rotate"></div>
 			<div class="progress" id="progress">0%</div>
 		</div>
 	</div>
+
+	<!-- Затемнение -->
+	<div class="overlay"></div>
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -256,57 +258,8 @@
 	<script src="libs/waypoints/waypoints.min.js"></script>
 	<script src="libs/animate/animate-css.js"></script>
 	<script src="libs/plugins-scroll/jquery.viewportchecker.js"></script>
-	
 	<script src="libs/owl carousel/owl.carousel.min.js"></script>
-
 	<script src="js/common.js"></script>
-
-
-	<script>
-		/*
-		$(document).ready(function() {
-		 
-		  $("#owl-demo").owlCarousel({
-		    autoPlay : false,
-		    stopOnHover : true,
-		    navigation:true,
-		    paginationSpeed : 1000,
-		    goToFirstSpeed : 2000,
-		    singleItem : true,
-		    autoHeight : true,
-		    transitionStyle:"fade"
-		  });
-		 
-		});*/
-		$(document).ready(function() {
-		
-		var owl = $("#owl-demo");
-		
-			owl.owlCarousel({
-				items : 1,
-				navigation: false,
-				navigationText : false,
-				autoHeight: true,
-				transitionStyle: "fade",
-				mouseDrag: false
-		  });
-		 
-		  // Custom Navigation Events
-		  $(".next").click(function(){
-		    owl.trigger('owl.next');
-		  })
-		  $(".prev").click(function(){
-		    owl.trigger('owl.prev');
-		  })
-		  $(".play").click(function(){
-		    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
-		  })
-		  $(".stop").click(function(){
-		    owl.trigger('owl.stop');
-		  })
-		 
-		});
-	</script>
 	
 </body>
 </html>	

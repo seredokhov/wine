@@ -98,7 +98,15 @@
 			<a href="#" class="search_button visible-lg">
 				<i class="fa fa-search"></i>
 			</a>
-		</div>		
+		</div>
+		<!--  Поиск   -->
+		<div class="search_wrap">
+			<button type="button" class="close_search">x</button>
+			<form action="">
+				<input type="text" class="search_input" placeholder="Поиск...">
+				<button type="submit" class="search_btn">Поиск</button>
+			</form>
+		</div>	
 	</header>
 	<div class="bg"></div>
 	<main>
@@ -184,18 +192,12 @@
 								<i class="fa fa-asterisk"></i>
 								<div class="message"></div>
 							</div>
+							<button type="submit" class="submit_btn">Submit</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</section>
-
-
-
-		<div class="map_modal">
-			<div id="map"></div>
-		</div>
-
 	</main>
 	<footer>
 		<div class="container">
@@ -224,20 +226,25 @@
 		</div>
 	</footer>
 
-	<div class="search_wrap">
-		<button type="button" class="close_search">x</button>
-		<form action="">
-			<input type="text" class="search_input" placeholder="Поиск...">
-			<button type="submit" class="search_btn">Поиск</button>
-		</form>
-	</div>
 
+	<!-- Прелоадер -->
 	<div class="preload">
 		<div class="inner">
 			<div class="rotate"></div>
 			<div class="progress" id="progress">0%</div>
 		</div>
 	</div>
+
+	<!-- Затемнение -->
+	<div class="overlay"></div>
+	<!-- Карта -->
+	<div class="map_modal">
+		<div class="close_btn" title="Закрыть карту">
+			<i class="fa fa-close"></i>
+		</div>
+		<div id="map"></div>
+	</div>
+
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -250,44 +257,8 @@
 	<script src="libs/waypoints/waypoints.min.js"></script>
 	<script src="libs/animate/animate-css.js"></script>
 	<script src="libs/plugins-scroll/jquery.viewportchecker.js"></script>
-	
 	<script src="libs/owl carousel/owl.carousel.min.js"></script>
-
 	<script src="js/common.js"></script>
-
-
-	<script>
-
-		$(document).ready(function() {
-		
-		var owl = $("#owl-demo");
-		
-			owl.owlCarousel({
-				items : 1,
-				navigation: false,
-				navigationText : false,
-				autoHeight: true,
-				transitionStyle: "fade",
-				mouseDrag: false
-		  });
-		 
-		  // Custom Navigation Events
-		  $(".next").click(function(){
-		    owl.trigger('owl.next');
-		  })
-		  $(".prev").click(function(){
-		    owl.trigger('owl.prev');
-		  })
-		  $(".play").click(function(){
-		    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
-		  })
-		  $(".stop").click(function(){
-		    owl.trigger('owl.stop');
-		  })
-		 
-		});
-	</script>
-
 
 	<!-- ГУГЛ КАРТА -->
 	<script async defer

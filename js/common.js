@@ -17,45 +17,39 @@ $(function(){
 });
 
 
-
+// Инициализация и настройка слайдера ESTATE 
 
 $(function() {
 
+	var owl = $("#owl-demo");
 
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	/*$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});*/
+	owl.owlCarousel({
+		singleItem : true,
+		navigation: false,
+		navigationText : false,
+		autoHeight: true,
+		transitionStyle: "fade",
+		mouseDrag: false
+	});
 
-	//Chrome Smooth Scroll
-	try {
-		$.browserSelector();
-		if($("html").hasClass("chrome")) {
-			$.smoothScroll();
-		}
-	} catch(err) {
+	// Custom Navigation Events
+	$(".next").click(function(){
+		owl.trigger('owl.next');
+	})
+	$(".prev").click(function(){
+		owl.trigger('owl.prev');
+	})
+	$(".play").click(function(){
+		owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+	})
+	$(".stop").click(function(){
+		owl.trigger('owl.stop');
+	})
 
-	};
-
-	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
-	
 });
 
-// Прелоадер
 
+// Прелоадер
 
 var images = document.images;
 var images_total_count = images.length;
@@ -81,9 +75,6 @@ function loaded() {
 	}
 
 } 
-
-
-
 
 
 
@@ -163,12 +154,11 @@ function countAnimate(elem) {
 
 	})
 }
-// Запуск функции при скроле
+// Запуск функции счетчика при скроле
 
 $(function() {
 	var bootle = $(".bootle_block");
 
-	
 		bootle.viewportChecker({
 			classToAdd : 'done',
 			callbackFunction: function(elem, action){
@@ -176,8 +166,6 @@ $(function() {
 				
 			}
 		})
-	
-		
 
 });
 
@@ -186,7 +174,7 @@ $(function() {
 // Поиск
 
 $(function() {
-	var link = $(".search_button");
+	var link = $(".search_button").add('.mobile_search > a');
 	var wrap = $(".search_wrap");
 	var input = wrap.find('.search_input');
 	var close = wrap.find('.close_search');
@@ -226,7 +214,7 @@ if ( $(window).width() > "1200" ) {
 	});
 }
 
-// Collapse формы споиска событий
+// Collapse формы списка событий EVENTS
 $(function() {
 	var link = $('.collapse_link');
 	var collapse = $('.filter_block');
@@ -236,7 +224,6 @@ $(function() {
 		collapse.slideToggle();
 		i.toggleClass('fa-caret-down fa-caret-up')
 	})
-
 
 });
 
@@ -360,10 +347,8 @@ $(function() {
 });
 
 
-// Работа с гугл картой
-
-function initMap () {
-
+// Функция инициализации гугл карты
+ function initMap() {
 
 	// Элемент с картой
 	var block = document.getElementById('map');
@@ -414,6 +399,32 @@ function initMap () {
 
 }
 
+
+// Модальное окно с картой
+$(function() {
+	
+	// Отрисовка карты по клику на ссылку
+
+	var link = $('.wiew_map');
+	var overlay = $('.overlay');
+	var close = $('.close_btn');
+	var mapModal = $('.map_modal');
+
+	link.on('click', function() {
+		overlay.fadeIn();
+		mapModal.fadeIn();
+		initMap();
+		return false
+	})
+	overlay.add(close).on('click', function(){
+		overlay.fadeOut();
+		mapModal.fadeOut();
+	})
+
+});
+
+
+
 // Валидация формы 
 
 
@@ -424,6 +435,7 @@ $(function() {
 	var textInput = form.find('#text');
 	var phoneInput = form.find('#phone');
 	var emailInput = form.find('#email');
+
 	var messageBlock;
 
 	var valid = function(target, message) {
@@ -462,7 +474,6 @@ $(function() {
 		}
 	}
 	// Валидацие Email
-
 	var emailValidation = function(e) {
 		var txtMessage;
 
@@ -482,6 +493,27 @@ $(function() {
 	phoneInput.on('keyup', numValidation );
 	textInput.on('keyup', textValidation );
 	emailInput.on('keyup', emailValidation );
+
+
+	// Проверка при отправке формы
+	form.on('submit', function(){
+
+		var arr = $(this).find('.select_block');
+		
+		arr.each(function(){
+
+			var field = $(this).find('input').add('textarea');
+
+			if ( field.val().length <= 0) {
+				invalid(field[0], 'Поле не должно быть пустым');
+			}			
+		})
+
+		if ( arr.children().hasClass('error') ) {
+			return false
+		}
+
+	})
 
 });
 
