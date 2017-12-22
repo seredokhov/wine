@@ -2018,6 +2018,10 @@ a.search_button:hover {
 	margin-bottom: 0;
 	margin-top: 75px;
 }
+.contacts_section_4 form {
+	margin-top: 90px;
+	margin-bottom: 150px;
+}
 .contacts_section_4 .select_block {
 	position: relative;
 	margin-bottom: 20px;
@@ -2070,6 +2074,28 @@ a.search_button:hover {
 .contacts_section_4 .select_block textarea.error {
 	border-color: #cc3d3d;
 }
+.contacts_section_4 .submit_btn {
+	padding: 18px 10px;
+	border-radius: 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	line-height: normal;
+	text-align: center;
+	display: block;
+	min-width: 131px;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+}
+.contacts_section_4 .submit_btn:hover {
+	border-color: #000;
+}
+.contacts_section_4 .submit_btn:active {
+	background: #d4d4d4;
+	border-color: #000;
+}
 /*Секция MAP*/
 .map_modal {
 	position: fixed;
@@ -2101,6 +2127,9 @@ div#map {
 	cursor: pointer;
 	background: #fff;
 	color: #787878;
+}
+.overflow {
+	overflow: hidden;
 }
 
 

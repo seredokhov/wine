@@ -407,17 +407,21 @@ $(function() {
 
 	var link = $('.wiew_map');
 	var overlay = $('.overlay');
+	var body = $('body');
 	var close = $('.close_btn');
 	var mapModal = $('.map_modal');
 
 	link.on('click', function() {
 		overlay.fadeIn();
+		body.addClass('overflow');
 		mapModal.fadeIn();
+
 		initMap();
 		return false
 	})
 	overlay.add(close).on('click', function(){
 		overlay.fadeOut();
+		body.removeClass('overflow');
 		mapModal.fadeOut();
 	})
 
