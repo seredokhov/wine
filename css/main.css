@@ -2236,7 +2236,7 @@ footer .copy {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 999;
+	z-index: 999999;
 }
 .preload .inner {
 	position: absolute;
@@ -2293,7 +2293,7 @@ footer .copy {
 	transition: all 0.3s ease-in-out;
 	transform: translate(0px, -100%) scale(0, 0);
 	opacity: 0;
-	z-index: 9999;
+	z-index: 999;
 }
 .search_wrap.open {
 	transform: translate(0px, 0px) scale(1, 1);
