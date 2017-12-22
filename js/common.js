@@ -369,7 +369,7 @@ $(function() {
 		{
 			cordinates : { lat : 46.013643, lng : 2.273761 },
 			image : "img/marker.png",
-			content : '<h1>Hey!</h1>'
+			content : '<h1>Адрес.</h1>'
 		}
 	]
 
