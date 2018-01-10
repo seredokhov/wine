@@ -178,6 +178,7 @@ $(function() {
 	var wrap = $(".search_wrap");
 	var input = wrap.find('.search_input');
 	var close = wrap.find('.close_search');
+	var form = wrap.find('form');
 
 	link.on('click', function() {
 		wrap.addClass('open');
@@ -190,10 +191,10 @@ $(function() {
 		wrap.removeClass('open');
 	})
 	// Отмена всплытия
-	input.on('click', function(){
-		event.stopPropagation();
+	input.on('click', function(e){
+		e = e || event;
+		e.stopPropagation();
 	})
-
 
 });
 

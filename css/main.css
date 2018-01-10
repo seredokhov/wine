@@ -19,8 +19,10 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-a {
+a,
+a:focus {
 	text-decoration: none;
+	outline: none;
 }
 button,
 input {
@@ -1779,6 +1781,7 @@ a.search_button:hover {
 	border-radius: 5px;
 	z-index: 999;
 	display: none;
+	overflow: hidden;
 }
 .gallery_popup.lg {
 	max-width: 100%;
@@ -1790,7 +1793,7 @@ a.search_button:hover {
 .gallery_popup .photo_large {
 	height: auto;
 	text-align: center;
-	position: relative;
+	position: static;
 }
 .gallery_popup .photo_large .left,
 .gallery_popup .photo_large .right {
@@ -1807,7 +1810,7 @@ a.search_button:hover {
 .gallery_popup .photo_large .left .link_prev,
 .gallery_popup .photo_large .right .link_next {
 	position: absolute;
-	left: -5px;
+	left: 2px;
 	top: 50%;
 	width: 35px;
 	height: 30px;
@@ -1819,11 +1822,10 @@ a.search_button:hover {
 	cursor: pointer;
 	visibility: hidden;
 	border-radius: 5px;
-	transition: all ease-in-out 0.3s;
 }
 .gallery_popup .photo_large .right .link_next {
 	left: auto;
-	right: -5px;
+	right: 2px;
 }
 .gallery_popup .photo_large > div:hover .link {
 	visibility: visible;
@@ -1839,7 +1841,7 @@ a.search_button:hover {
 	background: #fff;
 	position: absolute;
 	width: 100%;
-	bottom: 5px;
+	bottom: 0;
 	left: 0;
 	padding: 10px;
 	overflow: hidden;
