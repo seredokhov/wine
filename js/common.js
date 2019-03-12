@@ -1,20 +1,20 @@
-/* Анимации */
-$(function(){
-	
-		setTimeout(function () {
-		    $(".first").animated("fadeInLeft");
-		}, 500)
-		setTimeout(function () {
-		    $(".second").animated("fadeInLeft");
-		}, 300)
-		setTimeout(function () {
-		    $(".third").animated("fadeInLeft");
-		}, 500)
-		setTimeout(function () {
-		    $(".animate_img").animated("fadeInRight");
-		}, 500)
-
-});
+// /* Анимации */
+// $(function(){
+// 	$(window).on('load', function(){
+// 		setTimeout(function () {
+// 		    $(".first").animated("fadeInLeft");
+// 		}, 500);
+// 		setTimeout(function () {
+// 		    $(".second").animated("fadeInLeft");
+// 		}, 300);
+// 		setTimeout(function () {
+// 		    $(".third").animated("fadeInLeft");
+// 		}, 500);
+// 		setTimeout(function () {
+// 		    $(".animate_img").animated("fadeInRight");
+// 		}, 500);
+// 	});
+// });
 
 
 // Инициализация и настройка слайдера ESTATE 
@@ -70,7 +70,18 @@ function loaded() {
 	if ( images_loaded_count >= images_total_count) {
 		setTimeout(function () {
 			$(".preload .inner").fadeOut();
-			$(".preload").fadeOut("slow");
+			$(".preload").fadeOut("slow", function(){
+				$(".first").animated("fadeInLeft");
+				setTimeout(function () {
+				    $(".second").animated("fadeInLeft");
+				}, 300);
+				setTimeout(function () {
+				    $(".third").animated("fadeInLeft");
+				}, 500);
+				setTimeout(function () {
+				    $(".animate_img").animated("fadeInRight");
+				}, 500);
+			});
 		}, 500)
 	}
 
