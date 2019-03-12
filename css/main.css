@@ -233,6 +233,7 @@ a.search_button:hover {
 	letter-spacing: 2px;
 	font-weight: 500;
 	text-align: left;
+	display:none;
 }
 .header_section .caption_block .second {
 	font-family: Playfair Display;
@@ -243,6 +244,7 @@ a.search_button:hover {
 	font-weight: 300;
 	font-size: 48px;
 	color: #fff;
+	display:none;
 }
 .header_section .caption_block .third {
 	color: #fff;
@@ -251,9 +253,11 @@ a.search_button:hover {
 	text-align: left;
 	line-height: 90px;
 	font-family: Playfair Display;
+	display:none;
 }
 .header_section img {
 	max-width: 100%;
+	display:none;
 }
 /* Вторая секция */
 .glass_man_section .img_block {
