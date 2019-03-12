@@ -1,22 +1,3 @@
-// /* Анимации */
-// $(function(){
-// 	$(window).on('load', function(){
-// 		setTimeout(function () {
-// 		    $(".first").animated("fadeInLeft");
-// 		}, 500);
-// 		setTimeout(function () {
-// 		    $(".second").animated("fadeInLeft");
-// 		}, 300);
-// 		setTimeout(function () {
-// 		    $(".third").animated("fadeInLeft");
-// 		}, 500);
-// 		setTimeout(function () {
-// 		    $(".animate_img").animated("fadeInRight");
-// 		}, 500);
-// 	});
-// });
-
-
 // Инициализация и настройка слайдера ESTATE 
 
 $(function() {
@@ -74,13 +55,13 @@ function loaded() {
 				$(".first").animated("fadeInLeft");
 				setTimeout(function () {
 				    $(".second").animated("fadeInLeft");
-				}, 300);
+				}, 100);
 				setTimeout(function () {
 				    $(".third").animated("fadeInLeft");
-				}, 500);
+				}, 300);
 				setTimeout(function () {
 				    $(".animate_img").animated("fadeInRight");
-				}, 500);
+				}, 300);
 			});
 		}, 500)
 	}
